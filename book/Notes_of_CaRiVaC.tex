@@ -101,7 +101,7 @@ probability if their occurrence was independent. Example:
 
 \section{The Traditional Formulation of Grammar}%
 \label{sec:1.2}
-Formulation: $\mathcal{G} = (V_N, V_T, \mathbf{R}, S)$, where $V_N$ is a finite
+Grammar $\mathcal{G} = (V_N, V_T, \mathbf{R}, S)$, where $V_N$ is a finite
 set of non-terminal nodes, $V_T$ is a finite set of terminal nodes, $S \in V_N$
 is a start symbol at the root, and \textbf{R} is a set of production rules,
 %
@@ -113,9 +113,88 @@ is a start symbol at the root, and \textbf{R} is a set of production rules,
 where $\alpha, \beta$ are strings that
 $\alpha, \beta \in {(V_N \cup V_T)}^+$\footnote{$V^*$ means a string consisting
 of $n \geq 0$ symbols from $V$, and $V^+$ means $n \geq 1$} and including at
-least one non-terminal symbol.
+least one non-terminal symbol. Chomsky classified languages into 4 types
+according to the form of their production rules:
+%
+\begin{itemize}
+  \item Definition: $A, B \in V_N$, $a \in V_T$
+  \item Type 0: a \textbf{phrase structure or free} grammar with no constraint
+    on $\alpha$ and $\beta$
+  \item Type 1: a \textbf{context sensitive} grammar, where
+    $\xi A \eta \rightarrow \xi \beta \eta$ means $A$ is rewritten by $\beta$
+    in the context of strings $\xi$ and $\eta$
+  \item Type 2: a \textbf{context free} grammar, $A \rightarrow \beta$
+  \item Type 3: a \textbf{finite state or regular} grammar,
+    $A \rightarrow aB$ or $A \rightarrow a$
+\end{itemize}
+%
 
-Chomsky classified languages into 4 types according to the form of their
-production rules:
+The set of all possible strings of terminals $\omega$ derived from a
+$\mathcal{G}$ is called its \textbf{language}:
+%
+\begin{align}
+  \label{eq:1.3}
+  \mathbf{L}(\mathcal{G}) = \{\omega: S \overset{\mathbf{R^*}}{\implies} \omega, \omega \in V^*_T\}
+\end{align}
+%
+$\mathbf{R^*}$ means a sequence of production rules deriving $\omega$ from $S$:
+%
+\begin{align}
+  \label{eq:1.4}
+  S \overset{\gamma_1, \gamma_2, \ldots, \gamma_{n(\omega)}}{\implies} \omega
+\end{align}
+%
+If $\mathcal{G}$ is of type 1, 2 or 3, then a \textbf{parse tree} is obtained
+for a given $\omega$:
+%
+\begin{align}
+  \label{eq:1.5}
+  \mathbf{p}t(\omega) = (\gamma_1, \gamma_2, \ldots, \gamma_{n(\omega)})
+\end{align}
+%
 
+For example, in images, $V_T$ can be pixels or a simple set of local structures
+in the images such as textons and other image primitives. Then $V_N$ will be
+reusable parts and objects in the image. And a production rule
+$A \rightarrow \beta$ is a template which enables you to expand A. Then
+$\mathbf{L}(\mathcal{G})$ will be the set of all valid object
+\textbf{configurations}.
+
+The grammar rules represent both structural \textbf{regularity} and
+\textbf{flexibility}:
+%
+\begin{itemize}
+  \item Regularity: enforced by the template which decomposes an entity $A$,
+    such as object into certain elements in $\beta$
+  \item Flexibility: reflected by the fact that each structure $A$ has many
+    alternative decompositions
+\end{itemize}
+%
+
+A parse tree:
+%
+\begin{itemize}
+  \item Root is an Or-node
+  \item Or-nodes are labelled by $V_N \cup V_T$
+  \item And-nodes are labelled by $\mathbf{R}$
+\end{itemize}
+%
+To generate a parse tree:
+%
+\begin{enumerate}
+  \item For any Or-node with $A$, consider all rules have $A$ on the left and
+    create children which have And-nodes labelled by corresponding rules
+  \item Step 1 expand to a set of Or-nodes labelled by the symbols on the right
+    of the rule
+  \item An Or-node labelled by terminal does not expand further
+\end{enumerate}
+%
+\begin{figure}[!htpb]
+  \centering
+  \includegraphics[width=0.7\linewidth]{./fig/fig_1_2.png}
+  \caption{A very simple grammar, its universal And-Or tree and a specific
+    parse tree in shadow.}%
+  \label{fig:1.2}
+\end{figure}
+%
 \end{document}

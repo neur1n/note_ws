@@ -4,7 +4,7 @@ Just stuffs.
 
 ## Table of Contents
 ### Book
-- [Concepts and Representations in Vision and Cognition](https://github.com/Neur1n/note_ws/blob/master/book/Notes_of_CaRiVaC.tex)
+- [Concepts and Representations in Vision and Cognition](https://github.com/Neur1n/note_ws/blob/master/book/concepts_and_representations_in_vision_and_cognition/Notes_of_CaRiVaC.tex)
 
 ### Math
 - [Normal Distribution](https://github.com/Neur1n/note_ws/blob/master/math/norm_dist.ipynb)

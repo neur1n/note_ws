@@ -40,22 +40,28 @@ probability if their occurrence was independent. Example as shown in
 %
 
 \begin{textbox}{\textit{Original Texts}}
-  The set of such reusable parts is called the \textbf{parse graph} of the
-  signal. Firstly, associate to a signal $s$ the set of subsets $\{A_i\}$ of
-  $D$ such that $s\vert_{A_i}$ is a reusable part. Then these subsets are made
-  into the nodes $\langle A_i \rangle$ of the parse graph. In the graph, the
-  proper inclusion of one subset in another, $A_i \subsetneqq A_j$, is shown by
-  a ``vertical'' directed edge
-  $\langle A_j \rangle \to \langle A_i \rangle$. For simplicity, we prune
-  redundant edges in this graph by adding edges only when $A_i \subsetneqq A_j$
-  and there is no $A_k$ such that $A_i \subsetneqq A_k \subsetneqq A_j$.
+The set of reusable parts that one identifies in some class of signals, e.g.\
+in images, is called the \textbf{vocabulary} for this class of signals. Each
+such reusable part has a name or label. In language, a noun phrase, whose label
+is ``NP'', is a common reusable part and an element of the linguistic
+vocabulary. In vision, a face is a clear candidate for such a very high-level
+reusable part. The set of such reusable parts which on encounters  in analyzing
+statistically a specific signal is called the \textbf{parse graph} of the
+signal. Abstractly, one first associate to a signal $s$ the set of subsets
+$\{A_i\}$ of $D$ such that $s\vert_{A_i}$ is a reusable part. Then these
+subsets are made into the vertices or nodes $\langle A_i \rangle$ of the parse
+graph. In the graph, the proper inclusion of one subset in another,
+$A_i \subsetneqq A_j$, is shown by a ``vertical'' directed edge
+$\langle A_j \rangle \to \langle A_i \rangle$. For simplicity, we prune
+redundant edges in this graph by adding edges only when $A_i \subsetneqq A_j$
+and there is no $A_k$ such that $A_i \subsetneqq A_k \subsetneqq A_j$.
 
-  \par
-  In the ideal situation, parse graph is a tree with the whole signal at the
-  top and the domain D (the letters of the text or the pixels of the image) at
-  the bottom. Moreover, each node $\langle A_i \rangle$ should be the disjoint
-  union of its children, i.e., the parts $\{A_j \vert A_j \subsetneqq A_i\}$
-  such that $\cup_j A_j = A_i$.
+\par
+In the ideal situation, parse graph is a tree with the whole signal at the
+top and the domain D (the letters of the text or the pixels of the image) at
+the bottom. Moreover, each node $\langle A_i \rangle$ should be the disjoint
+union of its children, i.e., the parts $\{A_j \vert A_j \subsetneqq A_i\}$
+such that $\cup_j A_j = A_i$.
 \end{textbox}
 
 \section{The Traditional Formulation of Grammar}%

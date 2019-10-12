@@ -16,6 +16,7 @@ Just stuffs.
 
 - [Texton Papers](https://github.com/Neur1n/note_ws/tree/master/paper/texton)
 
+#### 2006
 - [A Stochastic Grammar of Images](https://github.com/Neur1n/note_ws/tree/master/paper/a_stochastic_grammar_of_images)
 
 #### 2013

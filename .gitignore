@@ -2,6 +2,7 @@
 */.ipynb_checkpoints/*
 **/*.log
 
+# For PDF files must keep this order
 *.pdf
 **/build/*
 !**/build/*.pdf

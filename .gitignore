@@ -1,5 +1,7 @@
-build/
 .ipynb_checkpoints/
 */.ipynb_checkpoints/*
 **/*.log
-**/*.pdf
+
+*.pdf
+**/build/*
+!**/build/*.pdf

@@ -715,4 +715,96 @@ Using Houdini Mantra for PBR\@.
 
 (The details of this section are omitted.)
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Chapter 5
+\section{Experiments}%
+\label{sec:experiments}
+(Omitted.)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Chapter 6
+\section{Discussion}%
+\label{sec:discussion}
+\textbf{Configurable Scene Synthesis:} Benefits:
+%
+\begin{itemize}
+  \item Has the potential to generate unlimited training data.
+  \item Can be used to diagnose AT systems. In the future, hopefully such
+    methods can assist in building explainable AI\@.
+    %
+    \begin{textbox}{\textit{Original Texts}}
+      For instance, in the field of causal reasoning\footnote{Pearl, J.:
+      Causality. Cambridge university press (2009).}, causal induction usually
+      requires turning on and off specific conditions in order to draw a
+      conclusion regarding whether or not a causal relation exists. Generating
+      a scene in a controllable manner can provide a useful tool for studying
+      these problems.
+    \end{textbox}
+    %
+  \item May be used to generate various virtual environment in a controllable
+    manner in order to train virtual agents to learn task planning\footnote{%
+    [69]A Virtual Reality Platform for Dynamic Human-scene Interaction,
+    [155]Target-driven Visual Navigation in Indoor Scenes using Deep
+    Reinforcement Learning} and control policies\footnote{[53]Emergence of
+    Locomotion Behaviours in Rich Environments, [130]Robust Imitation of
+    Diverse Behaviors}.
+\end{itemize}
+
+\textbf{The Importance of the Different Energy Terms:} Ranking from the largest
+weight to the smallest:
+%
+\begin{enumerate}
+  \item Distances between furniture pieces and the nearest wall.
+  \item Relative orientations of furniture pieces and the nearest wall.
+  \item Supporting relations.
+  \item Functional group relations.
+  \item Occlusions of the accessible space of furniture by other furniture.
+\end{enumerate}
+
+\textbf{Balancing Rendering Time and Quality:} (Omitted.)
+
+\textbf{The Speed of the Sampling Process:} To speed up the sampling the
+improve the synthesis quality, the sampling process is split into 5 stages:
+%
+\begin{enumerate}
+  \item Sample the objects on the wall (\Eg, windows, switches, paints, lights).
+  \item Sample the core functional objects in functional groups (\Eg, desks
+    and beds).
+  \item Sample the objects that are associated with the core functional objects
+    (\Eg, chairs and nightstands).
+  \item Sample the objects that are not paired with other objects (\Eg,
+    wardrobes and bookshelves).
+  \item Sample small objects that are supported by furniture (\Eg, laptops and
+    books).
+\end{enumerate}
+%
+\begin{textbox}{\textit{Original Texts}}
+By splitting the sampling process in accordance with functional groups, we
+effectively reduce the computational complexity, and different types of objects
+quickly converge to their final positions.
+\end{textbox}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Chapter 7
+\section{Conclusion and Future Work}%
+\label{sec:conclusion}
+Future work:
+%
+\begin{itemize}
+  \item The scene generation process can be improved using a multi-stage
+    sampling process; \Ie, sampling large furniture objects first and smaller
+    objects later, which can potentially improve the scene layout.
+  \item Considering modeling human activity inside the generated scenes,
+    especially with regard to functionality and affordance.
+  \item Considering the introduction of moving virtual humans into the scenes,
+    which can provide additional ground truth for human pose recognition, human
+    tracking, and other human-related tasks. Then an ST-AOG is needed, which
+    unlocks the potential to synthesize outdoor environments.
+  \item Domain adaptation techniques is planned to apply, which has been shown
+    to be important in learning from synthetic data\footnote{[76]From Virtual
+    to Real World Visual Perception using Domain Adaptation --- the DPM as
+    Example, [106]A Large Collection of Synthetic Images for Semantic
+    Segmentation of Urban Scenes, [123]Unbiased Look at Dataset Bias}.
+\end{itemize}
+
 \end{document}

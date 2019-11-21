@@ -1,59 +1,10 @@
-\documentclass[10pt]{article}
-\usepackage[a4paper]{geometry}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{tocbibind}
-\usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage{mdframed}
-\usepackage{subfiles}
-\usepackage{titlesec}
-\usepackage[dvipsnames]{xcolor}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Setups
-\newcommand{\Eq}[1]{Equation~\ref{eq:#1}}
-\newcommand{\Fig}[1]{Figure~\ref{fig:#1}}
-
-\newenvironment{textbox}[1]
-{%
-  \mdfsetup{%
-    frametitle={\colorbox{white}{\space#1\space}},
-    frametitleaboveskip=-\ht\strutbox,
-  }
-  \begin{mdframed}
-}
-{
-  \end{mdframed}
-}
-
-\setlength\parindent{0pt}
-\setlength\parskip{1.2ex}
-
-\graphicspath{{./fig/}}
-
-\hypersetup{%
-  hidelinks,
-  colorlinks,
-  citecolor={YellowOrange!85!black},
-  linkcolor={Aquamarine!85!black},
-  bookmarksopen=true,
-  bookmarksnumbered=true,
-  linktoc=all,
-  pdfauthor=Jihang Li,
-}
-
-\title{Distributions}
-\author{Jihang Li}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[../statistics.tex]{subfiles}
 
 \begin{document}
-\maketitle
-\tableofcontents
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Normal Distribution
-\section{Normal Distribution}%
+\chapter{Normal Distribution}%
 \label{sec:normal}
-\subsection{Basic Form}%
+\section{Basic Form}%
 \label{sec:basic_form}
 \begin{itemize}
   \item $X$: random variable.
@@ -69,7 +20,7 @@
     \end{align}
 \end{itemize}
 
-\subsection{Multivariate Form}%
+\section{Multivariate Form}%
 \label{sec:multi_form}
 \begin{itemize}
   \item $\mathbf{X}$: random vector, $\mathbf{X} = (X_1, \ldots, X_k)$.
@@ -92,7 +43,7 @@ is known as the \href{https://en.wikipedia.org/wiki/Mahalanobis_distance}{Mahala
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Poisson Distribution
-\section{Poisson Distribution}%
+\chapter{Poisson Distribution}%
 \label{sec:poisson}
 \begin{align}
   \label{eq:poisson}

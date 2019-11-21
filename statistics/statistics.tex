@@ -1,0 +1,61 @@
+\documentclass[10pt]{book}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tocbibind}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{mdframed}
+\usepackage{subfiles}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Setups
+\newcommand{\Eq}[1]{Equation~\ref{eq:#1}}
+\newcommand{\Fig}[1]{Figure~\ref{fig:#1}}
+
+\newenvironment{textbox}[1]
+{%
+  \mdfsetup{%
+    frametitle={\colorbox{white}{\space#1\space}},
+    frametitleaboveskip=-\ht\strutbox,
+  }
+  \begin{mdframed}
+}
+{
+  \end{mdframed}
+}
+
+\setlength\parindent{0pt}
+\setlength\parskip{1.2ex}
+
+\graphicspath{{./part_distribution/fig/}{./part_pattern_recognition/fig/}}
+
+\hypersetup{%
+  hidelinks,
+  colorlinks,
+  citecolor={YellowOrange!85!black},
+  linkcolor={Aquamarine!85!black},
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+  linktoc=all,
+  pdfauthor=Jihang Li,
+}
+
+\title{Statistics}
+\author{Jihang Li}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Part 1
+\part{Distributions}
+\subfile{part_distribution/distribution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Part 2
+\part{Pattern Recognition}
+\subfile{part_pattern_recognition/pattern_recognition}
+
+\end{document}

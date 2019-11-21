@@ -3,11 +3,12 @@ Just stuffs.
 
 
 ## Table of Contents
+### Statistics
+- [Distribution](https://github.com/Neur1n/note_ws/tree/master/statistics/part_distribution)
+- [Pattern Recognition](https://github.com/Neur1n/note_ws/tree/master/statistics/part_pattern_recognition)
+
 ### Book
 - [Concepts and Representations in Vision and Cognition](https://github.com/Neur1n/note_ws/tree/master/book/concepts_and_representations_in_vision_and_cognition)
-
-### Math
-- [Normal Distribution](https://github.com/Neur1n/note_ws/blob/master/math/norm_dist.ipynb)
 
 ### Paper
 - [And-Or Graph Papers](https://github.com/Neur1n/note_ws/tree/master/paper/aog)

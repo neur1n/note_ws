@@ -37,6 +37,8 @@ Just stuffs.
 - [Human-centric Indoor Scene Synthesis Using Stochastic Grammar](https://github.com/Neur1n/note_ws/tree/master/paper/2018_human_centric_synthesis)
 
 #### 2019
-- [VRKitchen: an Interactive 3D Virtual Environment for Task-oriented Learning](https://github.com/Neur1n/note_ws/tree/master/paper/2019_xfgao_vrkitchen)
+- [Knowledge-Embedded Routing Netword for Scene Graph Generation](https://github.com/Neur1n/note_ws/tree/master/paper/2019_kern) ❌ (*contents about evaluation metric is included*)
 
 - [SceneGraphNet: Neural Message Passing for 3D Indoor Scene Augmentation](https://github.com/Neur1n/note_ws/tree/master/paper/2019_scene_graph_net) ❌
+
+- [VRKitchen: an Interactive 3D Virtual Environment for Task-oriented Learning](https://github.com/Neur1n/note_ws/tree/master/paper/2019_xfgao_vrkitchen)

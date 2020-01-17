@@ -32,7 +32,7 @@ Just stuffs.
 - [SUN RGB-D: A RGB-D Scene Understanding Benchmark Suite](https://github.com/Neur1n/note_ws/blob/master/paper/datasets/2015_sun_rgbd.ipynb)
 
 #### 2016
-- [Visual Relationship Detection with Language Priors](https://github.com/Neur1n/note_ws/tree/master/paper/2016_visual_relationship_detection)
+- [Visual Relationship Detection with Language Priors](https://github.com/Neur1n/note_ws/tree/master/paper/2016_visual_relationship_detection) ❌ (*contents about evaluation metric is included*)
 
 #### 2018
 - [Configurable 3D Scene Synthesis and 2D Image Rendering with Per-Pixel Ground Truth using Stochastic Grammars](https://github.com/Neur1n/note_ws/tree/master/paper/2018_configurable_scene_synthesis)

@@ -3,6 +3,10 @@ Just stuffs.
 
 
 ## Table of Contents
+| Label |             Description              |
+|-------|--------------------------------------|
+|  ❌   | incomplete and will not be worked on |
+
 ### Statistics
 - [Distribution](https://github.com/Neur1n/note_ws/tree/master/statistics/part_distribution)
 - [Pattern Recognition](https://github.com/Neur1n/note_ws/tree/master/statistics/part_pattern_recognition)
@@ -34,4 +38,4 @@ Just stuffs.
 #### 2019
 - [VRKitchen: an Interactive 3D Virtual Environment for Task-oriented Learning](https://github.com/Neur1n/note_ws/tree/master/paper/2019_xfgao_vrkitchen)
 
-- [SceneGraphNet: Neural Message Passing for 3D Indoor Scene Augmentation (Incomplete)](https://github.com/Neur1n/note_ws/tree/master/paper/2019_scene_graph_net)
+- [SceneGraphNet: Neural Message Passing for 3D Indoor Scene Augmentation](https://github.com/Neur1n/note_ws/tree/master/paper/2019_scene_graph_net)❌

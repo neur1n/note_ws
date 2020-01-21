@@ -35,6 +35,8 @@ Just stuffs.
 - [SUN RGB-D: A RGB-D Scene Understanding Benchmark Suite](https://github.com/Neur1n/note_ws/blob/master/paper/datasets/2015_sun_rgbd.ipynb) [🔗](http://3dvision.princeton.edu/projects/2015/SUNrgbd/)
 
 #### 2016
+- [Visual Genome: Connecting Language and Vision Using Crowdsourced Dense Image Annotations](https://github.com/Neur1n/note_ws/tree/master/paper/2016_visual_genome) [🔗](http://visualgenome.org/)
+
 - [Visual Relationship Detection with Language Priors](https://github.com/Neur1n/note_ws/tree/master/paper/2016_visual_relationship_detection) [🔗](https://cs.stanford.edu/people/ranjaykrishna/vrd/) ⚠
 
 #### 2018

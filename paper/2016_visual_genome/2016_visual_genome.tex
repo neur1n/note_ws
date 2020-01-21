@@ -1,0 +1,201 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tocbibind}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{mdframed}
+\usepackage{subfiles}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Setups
+\newcommand{\Eq}[1]{Equation~\ref{eq:#1}}
+\newcommand{\Fig}[1]{Figure~\ref{fig:#1}}
+
+\newenvironment{textbox}[1]
+{%
+  \mdfsetup{%
+    frametitle={\colorbox{white}{\space#1\space}},
+    frametitleaboveskip=-\ht\strutbox,
+  }
+  \begin{mdframed}
+}
+{
+  \end{mdframed}
+}
+
+\setlength\parindent{0pt}
+\setlength\parskip{1.2ex}
+
+\graphicspath{{./fig/}}
+
+\hypersetup{%
+  hidelinks,
+  colorlinks,
+  citecolor={YellowOrange!85!black},
+  linkcolor={Aquamarine!85!black},
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+  linktoc=all,
+  pdfauthor=Jihang Li,
+}
+
+\title{Notes of ``Visual Genome''}
+\author{Jihang Li}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Abstract
+\section*{Abstract}%
+\label{sec:abstract}
+To achieve success at cognitive tasks, models need to understand the
+interactions and relationships between objects in an image.
+
+The Visual Genome (VG) dataset collects dense annotations of objects,
+attributes, and relationships to help modeling such as identifying objects and
+relationships \textit{riding(man, carriage)} when asked ``what vehicle is the
+person riding?''. VG contains over 108K images where each image has an average
+of 35 objects, 26 attributes, and 21 pairwise relationships between objects.
+The objects, attributes, relationships, and noun phrases in region descriptions
+and questions answer pairs to WordNet synsets.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Chapter 3
+\setcounter{section}{2}
+\section{Related Work}%
+\label{sec:related}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 3.2
+\setcounter{subsection}{1}
+\subsection{Image Descriptions}%
+\label{sec:descriptions}
+Most work related to describing images can be divided into two categories%
+\footnote{For detailed related papers please read the original paper.}:
+%
+\begin{itemize}
+  \item Retrieval of human-generated captions: methods in this category use
+    similarity metrics between image features from predefined models to
+    retrieve similar sentences.
+  \item Generation of novel captions: methods in this category common theme has
+    been to use recurrent neural networks to produce novel captions.
+\end{itemize}
+
+One drawback of these approaches is their attention to describing only the most
+salient aspect of the image.
+
+VG pushes toward a more complete understanding of an image by collecting a
+dataset in which we capture not just scene-level descriptions but also myriad
+of low-level descriptions, the ``grammar'' of the scene.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 3.3
+\subsection{Objects}%
+\label{sec:objects}
+Images in early datasets are iconic and do not capture the settings in which
+these objects usually co-occur. To remedy this problem,
+\href{http://cocodataset.org/#home}{MS-COCO} annotated real-world scenes that
+capture object contexts. However, MS-COCO was unable to describe all the
+objects in its images, since they annotated only 80 object categories.
+
+VG aims at collecting annotations for \textbf{all visual elements} that occur
+in images, increasing the number of distinct categories to 33887.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 3.4
+\subsection{Attributes}%
+\label{sec:attributes}
+Even if we haven't seen an object before, attributes allow us to infer
+something about it; for example, ``yellow and brown spotted with long neck''
+likely refers to a giraffe.
+
+VG uses a generalized formulation
+(\href{https://cs.stanford.edu/people/jcjohns/papers/cvpr2015/JohnsonCVPR2015.pdf}
+{Johnson \textit{et al.}, 2015}) and extends it such that attributes are not
+image-specific binaries but rather object-specific for each object in a
+real-world scene. The types of attributes are also extended to include size,
+pose, state (\textit{e.g.} ``transparent''), emotion, and many more.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 3.5
+\subsection{Relationships}%
+\label{sec:relationships}
+Relationships have already shown their utility in improving visual cognitive
+tasks (\href{https://computing.ece.vt.edu/~santol/projects/zsl_via_visual_abstraction/}
+{Antol \textit{et al.}, 2014},
+\href{https://www.cs.cmu.edu/~deva/software/proxemics/index.html}
+{Yang \textit{et al.}, 2012}).
+
+Relationships in a structured representation with objects have been defined as
+a graph structure called a \textbf{scene graph}, where the nodes are objects
+with attributes and edges are relationships between objects. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 3.6
+\subsection{Question Answering}%
+\label{sec:qa}
+In previous datasets, most questions concentrated on simple recognition-based
+questions about the salient objects, and answers were often extremely short.
+VG aims to capture the details of the images with diverse question types and
+long answers. These questions should cover a wide range of visual tasks from
+basic perception to complex reasoning. The QA dataset of 1.7 million QAs is
+also larger than any currently existing dataset.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 3.7
+\subsection{Knowledge Representation}%
+\label{sec:knowledge}
+A knowledge representation of the visual world is capable of tackling an array
+of vision tasks, from action recognition to general question answering.
+
+VG attempts to learn common-sense relationships from images. VG scene graphs
+can also be considered a \textbf{dense} knowledge representations for images.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 4
+\section{Crowdsourcing Strategies}%
+\label{sec:crowdsourcing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 4.2
+\setcounter{subsection}{1}
+\subsection{Region Descriptions}%
+\label{sec:region}
+Crowd workers naturally start with the most salient part of the image and then
+move to describing other parts of the image one by one. Inspired by this
+finding, we focused our attention towards collecting a dataset of region
+descriptions that is diverse in content.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 4.7
+\setcounter{subsection}{6}
+\subsection{Verification}%
+\label{sec:verification}
+Verification is conducted using two separate strategies\footnote{Both require
+manual verification.}:
+%
+\begin{itemize}
+  \item majority voting
+  \item rapid judgments
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Chapter 7
+\setcounter{section}{6}
+\section{Future Applications and Directions}%
+\label{sec:future}
+\textbf{Image Understanding} While there is a surge of image captioning
+(\href{http://www.cs.toronto.edu/~rkiros/papers/mnlm2014.pdf}
+{Kiros \textit{et al.}, 2014}) and question answering
+(\href{https://visualqa.org/}{Antol \textit{et al.}, 2015}) models, there has
+been little work on creating more comprehensive evaluation metrics to measure
+how well there models are performing. Such models are usually evaluated using
+BLEU, CIDEr, or METEOR and other similar metrics that \textbf{do not
+effectively} measure how well these models understand the images
+(\href{https://arxiv.org/pdf/1504.00325.pdf}{Chen \textit{et al.}, 2015}).
+
+\textbf{Completing the Set of Annotations} While VG is the most densely
+annotated visual dataset for cognitive image understanding, it is still not
+complete. \textbf{In most images, it is not feasible to collect an exhaustive
+set of attributes and relationships for every object or pair of objects.} This
+raises two new research questions:
+%
+\begin{enumerate}
+  \item Develop new evaluation metrics that do not penalize models due to a
+    lack of a complete set of annotations.
+  \item Need to design new interfaces and workflows that incentivize humans to
+    annotate visual common sense.
+\end{enumerate}
+\end{document}

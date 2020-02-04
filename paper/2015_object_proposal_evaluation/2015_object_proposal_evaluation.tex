@@ -204,11 +204,53 @@ Widely used evaluation metrics:
 %
 \begin{figure}[htpb]
   \centering
-  \includegraphics[width=0.8\linewidth]{fig_3.png}
+  \includegraphics[width=0.6\linewidth]{fig_3.png}
   \caption{Performance of different object proposal methods (dashed lines) and
     our proposed `fraudulent' method (DMP) on the PASCAL VOC 2010 dataset. We
     can see that DMP significantly outperforms all other proposal generators.}%
   \label{fig:3}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Chapter 6
+\setcounter{section}{5}
+\section{Bias Inspection}%
+\label{sec:bias}
+Datasets can be unbalanced. Some categories can be more frequent than others
+while others can be hard to detect (due to choices made in dataset collection).
+These issues need to be resolved for perfectly unbiased evaluation. However,
+generating unbiased datasets is an expensive and time-consuming process. Hence,
+to detect the bias without getting unbiased datasets, we need a method which
+can measure performance of proposal methods in a way that category specific
+biases can be accounted for and the extent or the capacity of this bias can be
+measured.
+
+\subsection{Assessing Bias Capacity}%
+\label{sec:assessing}
+One way of measuring the \textbf{bias capacity} in a proposal method to plot
+the \textbf{performance vs.\ the number of `seen' categories} while evaluating
+on some held-out set. A method that involves little or no training will be a
+flat curve on this plot.
+
+Biased methods such as DMPs will get better and better as more categories are
+seen in training. Thus, this analysis can help us find biased or
+`gamebility-prone' methods like DMPs that are/can be tuned to specific classes.
+
+To the best of our knowledge, no previous work has attempted to measure bias
+capacity by varying the number of `object' categories seen at training time.
+
+\setcounter{figure}{5}
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.9\linewidth]{fig_6.png}
+  \caption{Performance of RCNN and other proposal generators vs number of
+    object categories used for training. We can see that RCNN has the most
+    `bias capacity' while the performance of other methods is nearly (or
+    absolutely) constant.}%
+  \label{fig:6}
+\end{figure}
+
+The key observation to make here (\Fig{6}) is that with even a modest
+increase in `seen' categories with the same amount of increased training data,
+performance improvement of RCNN is significantly more than objectness. 
 
 \end{document}
